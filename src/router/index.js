@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const routes = [
   {
     path: '/characters',
+    alias: '/',
     name: 'Characters',
     component: () => import(/* webpackChunkName: "Characters" */ '../views/Characters.vue')
   },
