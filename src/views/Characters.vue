@@ -5,14 +5,12 @@
 </template>
 
 <script>
-
-
 import { request as fetchGQL } from "graphql-request";
 export default {
   setup(){
     fetchGQL("https://rickandmortyapi.com/graphql/", /* GraphQL */ `
       query {
-        character {
+        characters {
           info {
             count 
             pages 
@@ -22,9 +20,9 @@ export default {
           results {
             id
             name
-            air_date
-            episode
-            created
+            status
+            species
+            gender
           }
         }
       }
