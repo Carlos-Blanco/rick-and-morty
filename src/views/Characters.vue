@@ -1,18 +1,37 @@
 <template>
   <div class="home">
     <h1>Characters</h1>
-    <!-- <Card msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-/* import Card from '@/components/Card.vue'
 
+
+import { request as fetchGQL } from "graphql-request";
 export default {
-  name: 'Home',
-  components: {
-    Card
-  }
-} */
+  setup(){
+    fetchGQL("https://rickandmortyapi.com/graphql/", /* GraphQL */ `
+      query {
+        character {
+          info {
+            count 
+            pages 
+            next
+            prev
+          } 
+          results {
+            id
+            name
+            air_date
+            episode
+            created
+          }
+        }
+      }
+      `
+      ).then(data => {
+          console.log(data);
+      });
+    },
+  };
 </script>
