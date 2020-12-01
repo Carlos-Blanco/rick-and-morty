@@ -1,13 +1,21 @@
 <template>
-  <div class="about">
+  <div>
     <h1>Locations</h1>
   </div>
+  <ul>
+    <li v-for="location in locations" :key="location.id">
+      {{location.name}}
+    </li>
+  </ul>
 </template>
 
 <script>
 import { request as fetchGQL } from "graphql-request";
+import { ref } from "vue";
 export default {
   setup(){
+    let locations = ref([]);
+
     fetchGQL("https://rickandmortyapi.com/graphql/", /* GraphQL */ `
       query {
         locations {
@@ -27,8 +35,12 @@ export default {
       }
       `
       ).then(data => {
-          console.log(data);
+          locations.value = data.locations.results;
       });
+
+      return {
+        locations,
+      };
     },
   };
 </script>
