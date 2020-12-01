@@ -4,7 +4,7 @@
   </div>
   <ul>
     <li v-for="location in locations" :key="location.id">
-      {{location.name}}
+      {{location.name}} - {{location.type}} - {{location.dimension}}
     </li>
   </ul>
 </template>
