@@ -1,12 +1,15 @@
 <template>
   <div>
-    <h1>Locations</h1>
+    <h1 class="title">Locations</h1>
   </div>
-  <ul>
-    <li v-for="location in locations" :key="location.id">
-      {{location.name}} - {{location.type}} - {{location.dimension}}
-    </li>
-  </ul>
+  <div class="card-container">
+      <div v-for="location in locations" :key="location.id" class="card">
+        <div>
+          <h2>{{location.name}}</h2>
+          <p>{{location.type}} - {{location.dimension}}</p>
+        </div>
+      </div>
+  </div>
 </template>
 
 <script>

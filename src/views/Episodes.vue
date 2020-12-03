@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h1>Episodes</h1>
+    <h1 class="title">Episodes</h1>
   </div>
-  <ul>
-    <li v-for="episode in episodes" :key="episode.id">
-      {{episode.name}} - {{episode.episode}} - {{episode.air_date}}
-    </li>
-  </ul>
+  <div class="card-container">
+    <div v-for="episode in episodes" :key="episode.id" class="card">
+      <div>
+        <h2>{{episode.name}}</h2>
+        <p>{{episode.episode}}</p>
+        <p>{{episode.air_date}}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
