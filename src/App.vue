@@ -40,6 +40,9 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   padding: 0 2rem;
+  @media all and (max-width: 800px) {
+     grid-template-columns: 1fr;
+  }
 }
 
 .card {
