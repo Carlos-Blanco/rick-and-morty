@@ -61,4 +61,38 @@
     font-weight: bold;
   }
 }
+.status-Dead {
+  &::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    background: lightcoral;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+}
+.status-Alive {
+  &::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    background: rgb(48, 189, 90);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+}
+
+.status-unknown {
+  &::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #ffb950;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+}
 </style>

@@ -7,7 +7,7 @@
         <img :src="character.image">
         <div>
           <h2>{{character.name}}</h2>
-          <p>{{character.status}} - {{character.species}}</p>
+          <p :class="'status-' + character.status">{{character.status}} - {{character.species}}</p>
         </div>
       </div>
     </div>
