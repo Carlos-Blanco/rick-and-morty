@@ -1,13 +1,16 @@
 <template>
   <div>
-    <h1>Characters</h1>
+    <h1 class="title">Characters</h1>
   </div>
-  <ul>
-    <li v-for="character in characters" :key="character.id">
-      <img :src="character.image">
-      {{character.name}} - {{character.status}} - {{character.species}}
-    </li>
-  </ul>
+    <div class="card-container">
+      <div v-for="character in characters" :key="character.id" class="card">
+        <img :src="character.image">
+        <div>
+          <h2>{{character.name}}</h2>
+          <p>{{character.status}} - {{character.species}}</p>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
